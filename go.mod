@@ -1,6 +1,6 @@
 module github.com/perun-network/perun-eth-demo
 
-go 1.17
+go 1.19
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
