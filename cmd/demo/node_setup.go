@@ -71,12 +71,12 @@ func newNode() (*node, error) {
 }
 
 // setup does:
-//  - Create a new offChain account.
-//  - Create a client with the node's dialer, funder, adjudicator and wallet.
-//  - Setup a TCP listener for incoming connections.
-//  - Load or create the database and setting up persistence with it.
-//  - Set the OnNewChannel, Proposal and Update handler.
-//  - Print the configuration.
+//   - Create a new offChain account.
+//   - Create a client with the node's dialer, funder, adjudicator and wallet.
+//   - Setup a TCP listener for incoming connections.
+//   - Load or create the database and setting up persistence with it.
+//   - Set the OnNewChannel, Proposal and Update handler.
+//   - Print the configuration.
 func (n *node) setup() error {
 	if err := n.setupContracts(); err != nil {
 		return errors.WithMessage(err, "setting up contracts")
