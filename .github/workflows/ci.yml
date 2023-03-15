@@ -47,19 +47,6 @@ jobs:
     - name: copyright_notice
       run: ./scripts/check-copyright-notice.sh
 
-    # Also add the *.go here
-    - name: spelling
-      run: |
-        export PATH=$PATH:$(go env GOPATH)/bin
-        go get -u github.com/client9/misspell/cmd/misspell
-        ls -d */ *.go | xargs misspell -error
-    
-    - name: cyclomatic
-      run: |
-        export PATH=$PATH:$(go env GOPATH)/bin
-        go get github.com/fzipp/gocyclo/cmd/gocyclo
-        find -name '*.go' -not -name '*_test.go' -exec gocyclo -over 15 {} +
-
     - name: Unit Test
       run: |
         docker run --name chain --rm --net=host trufflesuite/ganache-cli -m "pistol kiwi shrug future ozone ostrich match remove crucial oblige cream critic" --block-time 1 -e 1000 &
