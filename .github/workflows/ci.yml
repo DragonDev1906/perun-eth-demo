@@ -41,13 +41,6 @@ jobs:
           true
         fi
 
-    # Disable -set_exit_status ./... because github has no "allowed_to_fail"
-    - name: lint
-      run: |
-        export PATH=$PATH:$(go env GOPATH)/bin
-        go get -u golang.org/x/lint/golint
-        golint ./...
-
     - name: vet
       run: go vet ./...
 
